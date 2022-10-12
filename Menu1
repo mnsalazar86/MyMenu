@@ -1,0 +1,163 @@
+#include<iostream>
+#include<iomanip>
+
+
+using namespace std;
+
+int main () {
+
+  //Menu items
+  
+  float burger = 4.95;
+  float pizza = 7.95;
+  float chicken = 6;
+
+ 
+
+
+  int menuItem;
+  int burgerUpgrade;
+  float burger1 = 1.25;
+  float burger2 = 0.75;
+  float discount = 1;
+  
+  float totalCost = 0;
+
+  int pizzaUpgrade;
+
+  float toppings1 = 1;
+  float toppings2 = 1.25;
+  float toppings3 = 2.75;
+
+  int chickenUpgrade;
+
+  float chicken1 = 3;
+  float chicken3 = 6.95;
+
+  float salesTax = 0.0825;
+
+
+  
+
+
+  
+// Asking user to select from the menu
+  cout << "Welcom to my restaurant! Please choose from the following menu items" << endl;
+
+  cout << "1. Burger $" << burger << endl;
+  cout << "2. Pizza $" << pizza << endl;
+  cout << "3. Chicken $" << chicken << endl;
+  cout << "4. No Thanks" << endl;
+
+  cin >> menuItem;
+  
+//menu for burgers
+  
+  if(menuItem == 1){
+    totalCost = totalCost + burger;
+    cout << "Burger comes with fries but can be upgraded!" << endl;
+    cout << "Upgrade items. " << endl;
+    cout << "1. Onion rings (+1.25)" << endl; 
+    cout << "2. Cheese fries (+$.75)" << endl;
+    cout << "3. Salad ($-1.00)" << endl;
+    cin >> burgerUpgrade;
+    if(burgerUpgrade == 1){
+      totalCost = totalCost + burger1;
+    cout << "Great Onion Rings it is!" << endl;
+    cout << "Your total is " << endl;
+   }
+  else if(burgerUpgrade == 2){
+    totalCost = totalCost + burger2;
+    cout << "Great Cheese Fries it is!" << endl;
+    cout << "Your total is " << endl;
+   }
+   else if(burgerUpgrade == 3){
+     totalCost = totalCost - discount;
+    cout << "Great Salad it is!" << endl;
+    cout << "Your total is " << endl;
+   }
+   }
+    
+   //menu for pizza
+    
+  else if(menuItem == 2){
+    totalCost = totalCost + pizza; 
+    cout << "Pizza is such a great choice it comes with cheese topping but you can add toppings!" << endl;
+    cout << "Choose your toppings. " << endl;
+    cout << "1. Pepperoni (+$1)" << endl; 
+    cout << "2. Veggie (+$1.25)" << endl;
+    cout << "3. Supreme (+$2.75)" << endl;
+    cin >> pizzaUpgrade;
+    
+    if(pizzaUpgrade == 1){
+      totalCost = totalCost + toppings1;
+    cout << "Pepperoni!" << endl;
+    cout << "Your total is " << endl;
+   }
+  else if(pizzaUpgrade == 2){
+    totalCost = totalCost + toppings2;
+    cout << "Delicious Veggies!" << endl;
+    cout << "Your total is " << endl;
+   }
+   else if(pizzaUpgrade == 3){
+     totalCost = totalCost + toppings3;
+    cout << "Best supreme it is!" << endl;
+    cout << "Your total is " << endl;
+   }
+   }
+
+  // menu for chicken
+
+  else if(menuItem == 3){
+    totalCost = totalCost + chicken;
+    cout << "Our chicken is the best chicken!" << endl;
+    cout << "Chicken comes with a soda but can be upgraded!" << endl;
+    cout << "1. Milkshake (+$3)" << endl; 
+    cout << "2. Salad (-$1.00)" << endl;
+    cout << "3. Cheese sticks (+$6.95)" << endl;
+    cin >> chickenUpgrade;
+    if(chickenUpgrade == 1){
+      totalCost = totalCost + chicken1;
+    cout << "Milkshake it is!" << endl;
+    cout << "Your total is " << endl;
+   }
+  else if(chickenUpgrade == 2){
+    totalCost = totalCost - discount;
+    cout << "Discount healthy salad!" << endl;
+    cout << "Your total is " << endl;
+   }
+   else if(chickenUpgrade == 3){
+     totalCost = totalCost + chicken3;
+    cout << "Side of golden cheese sticks!" << endl;
+    cout << "Your total is " << endl;
+   }
+    
+   }
+// if nothing else
+  else if(menuItem == 4) {
+    cout << "Not today then." << endl;
+  }
+else if (menuItem != 1 && menuItem !=2 && menuItem !=3 && menuItem !=4) {
+    cout << "Item not in the menu list please try again later." << endl;
+  }
+
+  cout << "$" << fixed << setprecision(2) << totalCost + salesTax << endl;
+  cout << "Thank you for coming have a wonderful day!" << endl;
+
+  
+
+ 
+
+
+  
+
+  
+
+
+  
+
+  
+  
+  
+  
+}
